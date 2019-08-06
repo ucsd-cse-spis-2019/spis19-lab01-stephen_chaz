@@ -1,0 +1,57 @@
+# North Rules
+# If can go east, go east
+0 *x** -> E 1
+
+# If can't go east, but can go north, go north
+0 xE** -> N 0
+
+# If can't go east or north, go west
+0 NEx* -> W 3
+
+# If can't go east, north, or west, go south
+0 NEWx -> S 2
+
+
+
+# East Rules
+# If can go south, go south
+1 ***x -> S 2
+
+# If can't go south, but can go east, go east
+1 *x*S -> E 1
+
+# If can't go south or east, go north
+1 xE*S -> N 0
+
+# If can't go south, east, or north, go west
+1 NExS -> W 3
+
+
+
+#South Rules
+# If can go west, go west
+2 **x* -> W 3
+
+# If can't go west, but can go south, go south
+2 **Wx -> S 2
+
+# If can't go west or south, go east
+2 *xWS -> E 1
+
+# If can't go west, south, or east, go north
+2 xEWS -> N 0
+
+
+
+#West Rules
+# If can go north, go north
+3 x*** -> N 0
+
+# If can't go north, but can go west, go west
+3 N*x* -> W 3
+
+# If can't go north or west, go south
+3 N*Wx -> S 2
+
+# If can't go north, west, or south, go east
+3 NxWS -> E 1
